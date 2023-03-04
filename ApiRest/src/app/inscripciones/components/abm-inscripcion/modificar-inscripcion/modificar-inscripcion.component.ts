@@ -1,0 +1,74 @@
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ProfesorService } from 'src/app/core/services/profesor.service';
+import { AbmService } from 'src/app/inscripciones/service/abm.service';
+import { Inscripcion } from 'src/app/shared/models/inscripcion';
+import { Profesor } from 'src/app/shared/models/profesor';
+
+@Component({
+  selector: 'app-modificar-inscripcion',
+  templateUrl: './modificar-inscripcion.component.html',
+  styleUrls: ['./modificar-inscripcion.component.css']
+})
+export class ModificarInscripcionComponent implements OnInit {
+
+  form!: FormGroup;
+  curso: any[] = ['Angular', 'Javascript', 'Python', 'Diseño UX', 'SQL'];
+  actionBtn: string = "Guardar";
+  profesor$!: Observable<Profesor[]>;
+
+  constructor(
+    private abmService: AbmService,
+    private profesor: ProfesorService,
+    private snackBar: MatSnackBar,
+    @Inject(MAT_DIALOG_DATA) public inscripcion: Inscripcion,
+    private dialogRef: MatDialogRef<ModificarInscripcionComponent>
+    ) { }
+
+  ngOnInit(): void {
+    this.profesor$ = this.profesor.obtenerProfesores();
+      this.form = new FormGroup({
+        curso: new FormControl('', Validators.required),
+        comision: new FormControl('', Validators.required),
+        alumnoNombre: new FormControl('', Validators.required),
+        alumnoApellido: new FormControl('', Validators.required),
+        profesor: new FormControl('{}', Validators.required),
+      });
+
+      if(this.inscripcion){
+        this.actionBtn = "Guardar"
+        this.form.controls['curso'].setValue(this.inscripcion.curso);
+        this.form.controls['comision'].setValue(this.inscripcion.comision);
+        this.form.controls['alumnoNombre'].setValue(this.inscripcion.alumnoNombre);
+        this.form.controls['alumnoApellido'].setValue(this.inscripcion.alumnoApellido);
+        this.form.controls['profesor'].setValue(this.inscripcion.profesor);
+      }
+  }
+
+  editInscripcion() {
+    this.abmService.editInscripcion(this.form.value, this.inscripcion.id)
+    .subscribe({
+      next:(res)=>{
+        this.snackBar.open('  Alumno modificado correctamente', '', {
+          duration: 1500,
+          horizontalPosition: 'left',
+          verticalPosition: 'bottom'
+        });
+        this.form.reset();
+        this.dialogRef.close('guardar');
+      },
+      error:()=>{
+        this.snackBar.open(' Error al modificar Alumno', '', {
+          duration: 1500,
+          horizontalPosition: 'left',
+          verticalPosition: 'bottom'
+        });
+      }
+    })
+  }
+
+}

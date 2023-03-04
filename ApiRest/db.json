@@ -1,0 +1,213 @@
+{
+  "alumnos": [
+    {
+      "nombre": "Juan",
+      "apellido": "Rodriguez",
+      "curso": "Angular",
+      "comision": "100",
+      "email": "juanrodri@gmail.com",
+      "id": 1
+    },
+    {
+      "nombre": "Mario",
+      "apellido": "Garcia",
+      "curso": "Javascript",
+      "comision": "101",
+      "email": "garcia_mario@gmail.com",
+      "id": 2
+    },
+    {
+      "nombre": "Ana",
+      "apellido": "Lopez",
+      "curso": "Python",
+      "comision": "103",
+      "email": "ana1lopez@gmail.com",
+      "id": 3
+    },
+    {
+      "nombre": "Carlos",
+      "apellido": "Martinez",
+      "curso": "Diseño UX",
+      "comision": "105",
+      "email": "carlistosm@gmail.com",
+      "id": 4
+    },
+    {
+      "nombre": "Jose",
+      "apellido": "Hernandez",
+      "curso": "Angular",
+      "comision": "100",
+      "email": "josehernandez@gmail.com",
+      "id": 5
+    },
+    {
+      "nombre": "Laura",
+      "apellido": "Perez",
+      "curso": "SQL",
+      "comision": "108",
+      "email": "lauperez@gmail.com",
+      "id": 6
+    },
+    {
+      "nombre": "Pedro",
+      "apellido": "Sanchez",
+      "curso": "Javascript",
+      "comision": "101",
+      "email": "pepesanchez@gmail.com",
+      "id": 7
+    }
+  ],
+  "cursos": [
+    {
+      "nombre": "ANGULAR",
+      "comision": "100",
+      "profesor": {
+        "nombre": "Minerva",
+        "correo": "minerva@gmail.com"
+      },
+      "inscripcionAbierta": "Abierta",
+      "id": 1
+    },
+    {
+      "nombre": "JAVASCRIPT",
+      "comision": "101",
+      "profesor": {
+        "nombre": "Garrison",
+        "correo": "mrGarrison@gmail.com"
+      },
+      "inscripcionAbierta": "Cerrada",
+      "id": 2
+    },
+    {
+      "nombre": "PHYTON",
+      "comision": "103",
+      "profesor": {
+        "nombre": "Walter",
+        "correo": "walterwh@gmail.com"
+      },
+      "inscripcionAbierta": "Abierta",
+      "id": 3
+    },
+    {
+      "nombre": "DISEÑO UX",
+      "comision": "105",
+      "profesor": {
+        "nombre": "Albus",
+        "correo": "albus@gmail.com"
+      },
+      "inscripcionAbierta": "Cerrada",
+      "id": 4
+    },
+    {
+      "nombre": "SQL",
+      "comision": "108",
+      "profesor": {
+        "nombre": "Indiana",
+        "correo": "indianaj@gmail.com"
+      },
+      "inscripcionAbierta": "Cerrada",
+      "id": 5
+    }
+  ],
+  "inscripciones": [
+    {
+      "curso": "Javascript",
+      "comision": "101",
+      "alumnoNombre": "Pedro",
+      "alumnoApellido": "Sanchez",
+      "profesor": {
+        "nombre": "Garrison",
+        "correo": "mrGarrison@gmail.com"
+      },
+      "id": 1
+    },
+    {
+      "curso": "SQL",
+      "comision": "108",
+      "alumnoNombre": "Laura",
+      "alumnoApellido": "Perez",
+      "profesor": {
+        "nombre": "Indiana",
+        "correo": "indianaj@gmail.com"
+      },
+      "id": 2
+    },
+    {
+      "curso": "Angular",
+      "comision": "100",
+      "alumnoNombre": "Jose",
+      "alumnoApellido": "Hernandez",
+      "profesor": {
+        "nombre": "Minerva",
+        "correo": "minerva@gmail.com"
+      },
+      "id": 3
+    },
+    {
+      "curso": "Diseño UX",
+      "comision": "105",
+      "alumnoNombre": "Carlos",
+      "alumnoApellido": "Martinez",
+      "profesor": {
+        "nombre": "Albus",
+        "correo": "albus@gmail.com"
+      },
+      "id": 4
+    },
+    {
+      "curso": "Python",
+      "comision": "103",
+      "alumnoNombre": "Ana",
+      "alumnoApellido": "Lopez",
+      "profesor": {
+        "nombre": "Walter",
+        "correo": "walterwh@gmail.com"
+      },
+      "id": 5
+    },
+    {
+      "curso": "Javascript",
+      "comision": "101",
+      "alumnoNombre": "Mario",
+      "alumnoApellido": "Garcia",
+      "profesor": {
+        "nombre": "Garrison",
+        "correo": "mrGarrison@gmail.com"
+      },
+      "id": 6
+    },
+    {
+      "curso": "Angular",
+      "comision": "100",
+      "alumnoNombre": "Juan",
+      "alumnoApellido": "Rodriguez",
+      "profesor": {
+        "nombre": "Minerva",
+        "correo": "minerva@gmail.com"
+      },
+      "id": 7
+    }
+  ],
+  "profesores": [
+    {
+      "nombre": "Minerva",
+      "correo": "minerva@gmail.com"
+    },
+    {
+      "nombre": "Garrison",
+      "correo": "mrGarrison@gmail.com"
+    },
+    {
+      "nombre": "Walter",
+      "correo": "walterwh@gmail.com"
+    },
+    {
+      "nombre": "Albus",
+      "correo": "albus@gmail.com"
+    },
+    {
+      "nombre": "Indiana",
+      "correo": "indianaj@gmail.com"
+    }
+  ]
+}
