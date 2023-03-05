@@ -18,9 +18,10 @@
             Completar</div>
 
         <mat-form-field class="col-md-7">
-            <mat-label>Seleccionar Curso</mat-label>
+            <mat-label>Curso</mat-label>
             <mat-select formControlName="curso">
-                <mat-option *ngFor="let item of curso" [value]="item">{{item}}</mat-option>
+                <mat-option *ngFor="let curso of curso$ | async"
+                    [value]="curso">{{curso.nombre}}</mat-option>
             </mat-select>
         </mat-form-field>
 

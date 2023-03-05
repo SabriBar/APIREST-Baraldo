@@ -3,8 +3,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { AbmService } from 'src/app/alumno/services/abm.service';
+import { CursosService } from 'src/app/curso/services/cursos.service';
 import { Alumno } from 'src/app/shared/models/alumno';
+import { Curso } from 'src/app/shared/models/curso';
 
 @Component({
   selector: 'app-modificar-alumno',
@@ -13,12 +16,13 @@ import { Alumno } from 'src/app/shared/models/alumno';
 })
 export class ModificarAlumnoComponent implements OnInit {
   formulario!: FormGroup;
-  curso: any[] = ['Angular','Javascript','Python','Diseño UX','SQL'];
+  curso$!: Observable<Curso[]>;
   actionBtn: string = "Guardar";
 
   constructor(
     private abmService: AbmService,
     private snackBar: MatSnackBar,
+    private curso: CursosService,
     @Inject(MAT_DIALOG_DATA) public alumno: Alumno,
     private dialogRef: MatDialogRef<ModificarAlumnoComponent>  
   ) {
@@ -26,10 +30,11 @@ export class ModificarAlumnoComponent implements OnInit {
 
   ngOnInit(): void {
       let regexCorreo: string = '^[^@]+@[^@]+\.[a-zA-Z]{2,}$';
+      this.curso$ = this.curso.obtenerCursosObservable();
       this.formulario = new FormGroup({
         nombre: new FormControl('', Validators.required),
         apellido: new FormControl('', Validators.required),
-        curso: new FormControl('', Validators.required),
+        curso: new FormControl('{}', Validators.required),
         comision: new FormControl('', Validators.required),
         email: new FormControl('', [Validators.required, Validators.pattern(regexCorreo)])
       });

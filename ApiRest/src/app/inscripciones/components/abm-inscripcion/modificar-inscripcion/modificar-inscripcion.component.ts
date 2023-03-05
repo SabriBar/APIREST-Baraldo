@@ -5,7 +5,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProfesorService } from 'src/app/core/services/profesor.service';
+import { CursosService } from 'src/app/curso/services/cursos.service';
 import { AbmService } from 'src/app/inscripciones/service/abm.service';
+import { Curso } from 'src/app/shared/models/curso';
 import { Inscripcion } from 'src/app/shared/models/inscripcion';
 import { Profesor } from 'src/app/shared/models/profesor';
 
@@ -17,7 +19,7 @@ import { Profesor } from 'src/app/shared/models/profesor';
 export class ModificarInscripcionComponent implements OnInit {
 
   form!: FormGroup;
-  curso: any[] = ['Angular', 'Javascript', 'Python', 'Diseño UX', 'SQL'];
+  curso$!: Observable<Curso[]>;
   actionBtn: string = "Guardar";
   profesor$!: Observable<Profesor[]>;
 
@@ -25,14 +27,16 @@ export class ModificarInscripcionComponent implements OnInit {
     private abmService: AbmService,
     private profesor: ProfesorService,
     private snackBar: MatSnackBar,
+    private curso: CursosService,
     @Inject(MAT_DIALOG_DATA) public inscripcion: Inscripcion,
     private dialogRef: MatDialogRef<ModificarInscripcionComponent>
     ) { }
 
   ngOnInit(): void {
     this.profesor$ = this.profesor.obtenerProfesores();
+    this.curso$ = this.curso.obtenerCursosObservable();
       this.form = new FormGroup({
-        curso: new FormControl('', Validators.required),
+        curso: new FormControl('{}', Validators.required),
         comision: new FormControl('', Validators.required),
         alumnoNombre: new FormControl('', Validators.required),
         alumnoApellido: new FormControl('', Validators.required),

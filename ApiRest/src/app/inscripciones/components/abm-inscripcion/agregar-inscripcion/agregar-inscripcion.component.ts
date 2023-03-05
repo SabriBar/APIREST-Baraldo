@@ -4,7 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProfesorService } from 'src/app/core/services/profesor.service';
+import { CursosService } from 'src/app/curso/services/cursos.service';
 import { AbmService } from 'src/app/inscripciones/service/abm.service';
+import { Curso } from 'src/app/shared/models/curso';
 import { Inscripcion } from 'src/app/shared/models/inscripcion';
 import { Profesor } from 'src/app/shared/models/profesor';
 
@@ -16,7 +18,7 @@ import { Profesor } from 'src/app/shared/models/profesor';
 export class AgregarInscripcionComponent implements OnInit {
 
   form: FormGroup;
-  curso: any[] = ['Angular', 'Javascript', 'Python', 'Diseño UX', 'SQL'];
+  curso$!: Observable<Curso[]>;
   profesor$!: Observable<Profesor[]>;
 
 
@@ -25,11 +27,13 @@ export class AgregarInscripcionComponent implements OnInit {
     private abmService: AbmService,
     private router: Router,
     private profesor: ProfesorService,
+    private curso: CursosService,
     private snackBar: MatSnackBar) {
 
     this.profesor$ = this.profesor.obtenerProfesores();
+    this.curso$ = this.curso.obtenerCursosObservable();
     this.form = this.fb.group({
-      curso: new FormControl('', Validators.required),
+      curso: new FormControl('{}', Validators.required),
       comision: new FormControl('', Validators.required),
       alumnoNombre: new FormControl('', Validators.required),
       alumnoApellido: new FormControl('', Validators.required),

@@ -3,7 +3,16 @@
     {
       "nombre": "Juan",
       "apellido": "Rodriguez",
-      "curso": "Angular",
+      "curso": {
+        "nombre": "SQL",
+        "comision": "108",
+        "profesor": {
+          "nombre": "Indiana",
+          "correo": "indianaj@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 5
+      },
       "comision": "100",
       "email": "juanrodri@gmail.com",
       "id": 1
@@ -11,7 +20,16 @@
     {
       "nombre": "Mario",
       "apellido": "Garcia",
-      "curso": "Javascript",
+      "curso": {
+        "nombre": "Javascript",
+        "comision": "101",
+        "profesor": {
+          "nombre": "Garrison",
+          "correo": "mrGarrison@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 2
+      },
       "comision": "101",
       "email": "garcia_mario@gmail.com",
       "id": 2
@@ -19,7 +37,16 @@
     {
       "nombre": "Ana",
       "apellido": "Lopez",
-      "curso": "Python",
+      "curso": {
+        "nombre": "SQL",
+        "comision": "108",
+        "profesor": {
+          "nombre": "Indiana",
+          "correo": "indianaj@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 5
+      },
       "comision": "103",
       "email": "ana1lopez@gmail.com",
       "id": 3
@@ -27,7 +54,16 @@
     {
       "nombre": "Carlos",
       "apellido": "Martinez",
-      "curso": "Diseño UX",
+      "curso": {
+        "nombre": "Diseño UX",
+        "comision": "105",
+        "profesor": {
+          "nombre": "Albus",
+          "correo": "albus@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 4
+      },
       "comision": "105",
       "email": "carlistosm@gmail.com",
       "id": 4
@@ -35,7 +71,16 @@
     {
       "nombre": "Jose",
       "apellido": "Hernandez",
-      "curso": "Angular",
+      "curso": {
+        "nombre": "Angular",
+        "comision": "100",
+        "profesor": {
+          "nombre": "Minerva",
+          "correo": "minerva@gmail.com"
+        },
+        "inscripcionAbierta": "Abierta",
+        "id": 1
+      },
       "comision": "100",
       "email": "josehernandez@gmail.com",
       "id": 5
@@ -43,7 +88,16 @@
     {
       "nombre": "Laura",
       "apellido": "Perez",
-      "curso": "SQL",
+      "curso": {
+        "nombre": "SQL",
+        "comision": "108",
+        "profesor": {
+          "nombre": "Indiana",
+          "correo": "indianaj@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 5
+      },
       "comision": "108",
       "email": "lauperez@gmail.com",
       "id": 6
@@ -51,7 +105,16 @@
     {
       "nombre": "Pedro",
       "apellido": "Sanchez",
-      "curso": "Javascript",
+      "curso": {
+        "nombre": "Javascript",
+        "comision": "101",
+        "profesor": {
+          "nombre": "Garrison",
+          "correo": "mrGarrison@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 2
+      },
       "comision": "101",
       "email": "pepesanchez@gmail.com",
       "id": 7
@@ -59,17 +122,17 @@
   ],
   "cursos": [
     {
-      "nombre": "ANGULAR",
+      "nombre": "Angular",
       "comision": "100",
       "profesor": {
-        "nombre": "Minerva",
-        "correo": "minerva@gmail.com"
+        "nombre": "Garrison",
+        "correo": "mrGarrison@gmail.com"
       },
       "inscripcionAbierta": "Abierta",
       "id": 1
     },
     {
-      "nombre": "JAVASCRIPT",
+      "nombre": "Javascript",
       "comision": "101",
       "profesor": {
         "nombre": "Garrison",
@@ -79,7 +142,7 @@
       "id": 2
     },
     {
-      "nombre": "PHYTON",
+      "nombre": "Phyton",
       "comision": "103",
       "profesor": {
         "nombre": "Walter",
@@ -89,7 +152,7 @@
       "id": 3
     },
     {
-      "nombre": "DISEÑO UX",
+      "nombre": "Diseño UX",
       "comision": "105",
       "profesor": {
         "nombre": "Albus",
@@ -111,7 +174,16 @@
   ],
   "inscripciones": [
     {
-      "curso": "Javascript",
+      "curso": {
+        "nombre": "Javascript",
+        "comision": "101",
+        "profesor": {
+          "nombre": "Garrison",
+          "correo": "mrGarrison@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 2
+      },
       "comision": "101",
       "alumnoNombre": "Pedro",
       "alumnoApellido": "Sanchez",
@@ -122,7 +194,16 @@
       "id": 1
     },
     {
-      "curso": "SQL",
+      "curso": {
+        "nombre": "SQL",
+        "comision": "108",
+        "profesor": {
+          "nombre": "Indiana",
+          "correo": "indianaj@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 5
+      },
       "comision": "108",
       "alumnoNombre": "Laura",
       "alumnoApellido": "Perez",
@@ -133,7 +214,16 @@
       "id": 2
     },
     {
-      "curso": "Angular",
+      "curso": {
+        "nombre": "Angular",
+        "comision": "100",
+        "profesor": {
+          "nombre": "Garrison",
+          "correo": "mrGarrison@gmail.com"
+        },
+        "inscripcionAbierta": "Abierta",
+        "id": 1
+      },
       "comision": "100",
       "alumnoNombre": "Jose",
       "alumnoApellido": "Hernandez",
@@ -144,7 +234,16 @@
       "id": 3
     },
     {
-      "curso": "Diseño UX",
+      "curso": {
+        "nombre": "Diseño UX",
+        "comision": "105",
+        "profesor": {
+          "nombre": "Albus",
+          "correo": "albus@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 4
+      },
       "comision": "105",
       "alumnoNombre": "Carlos",
       "alumnoApellido": "Martinez",
@@ -155,7 +254,16 @@
       "id": 4
     },
     {
-      "curso": "Python",
+      "curso": {
+        "nombre": "SQL",
+        "comision": "108",
+        "profesor": {
+          "nombre": "Indiana",
+          "correo": "indianaj@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 5
+      },
       "comision": "103",
       "alumnoNombre": "Ana",
       "alumnoApellido": "Lopez",
@@ -166,7 +274,16 @@
       "id": 5
     },
     {
-      "curso": "Javascript",
+      "curso": {
+        "nombre": "Javascript",
+        "comision": "101",
+        "profesor": {
+          "nombre": "Garrison",
+          "correo": "mrGarrison@gmail.com"
+        },
+        "inscripcionAbierta": "Cerrada",
+        "id": 2
+      },
       "comision": "101",
       "alumnoNombre": "Mario",
       "alumnoApellido": "Garcia",
@@ -177,7 +294,16 @@
       "id": 6
     },
     {
-      "curso": "Angular",
+      "curso": {
+        "nombre": "Angular",
+        "comision": "100",
+        "profesor": {
+          "nombre": "Garrison",
+          "correo": "mrGarrison@gmail.com"
+        },
+        "inscripcionAbierta": "Abierta",
+        "id": 1
+      },
       "comision": "100",
       "alumnoNombre": "Juan",
       "alumnoApellido": "Rodriguez",
